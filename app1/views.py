@@ -207,7 +207,7 @@ def updatemployee(request,id):
         'form': form,
         'employee': employee
     }
-    return render(request, 'updatecategory.html',context)
+    return render(request, 'updateemployee.html',context)
 
 
 def updateorderdetail(request,id):
@@ -223,7 +223,7 @@ def updateorderdetail(request,id):
         'form': form,
         'orderdetail': orderdetail
     }
-    return render(request, 'updatecategory.html',context)
+    return render(request, 'updateorderdetail.html',context)
 
 
 def updateproduct(request, id):
@@ -235,7 +235,6 @@ def updateproduct(request, id):
             return redirect('index')
     else:
         form = ProductForm(instance=product)
-
     context = {
         'form': form,
         'product': product
