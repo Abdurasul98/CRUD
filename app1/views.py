@@ -131,7 +131,7 @@ def deletecategory(request,id):
         'categories': categories
     }
 
-    return render(request, 'deletecategory.html',context)
+    return render(request, 'index.html',context)
 
 def deleteproduct(request,id):
     product = get_object_or_404(Product, pk=id)
@@ -143,7 +143,7 @@ def deleteproduct(request,id):
         'products': products,
         'category': category,
     }
-    return render(request, 'deleteproduct.html',context)
+    return render(request, 'index.html',context)
 
 def deleteorderdetail(request,id):
     orderdetail = get_object_or_404(OrderDetail, pk=id)
@@ -153,7 +153,7 @@ def deleteorderdetail(request,id):
         'orderdetail': orderdetail,
         'orderdetails': orderdetails
     }
-    return render(request, 'deleteorderdetail.html',context)
+    return render(request, 'index.html',context)
 
 def deleteemployee(request,id):
     employee = get_object_or_404(Employee, pk=id)
@@ -163,7 +163,7 @@ def deleteemployee(request,id):
         'employee': employee,
         'employees':employees
     }
-    return render(request, 'deleteemployee.html',context)
+    return render(request, 'index.html',context)
 
 def deleteorder(request,id):
     order = get_object_or_404(Order, pk=id)
@@ -173,7 +173,7 @@ def deleteorder(request,id):
         'order': order,
         'orders': orders
     }
-    return render(request, 'deleteorder.html',context)
+    return render(request, 'index.html',context)
 
 
 
