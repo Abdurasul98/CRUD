@@ -48,9 +48,9 @@
         <ul class="list-group">
             <li class="list-group-item active" aria-current="true">Categories</li>
             {% for i in category %}
-            <a href="{% url 'deletecategory' i.id %}">Delete category</a>
+            <a href="{% url 'deletecategory' i.pk %}">Delete category</a>
             <li class="list-group-item">
-                <a href="{% url 'product' i.id %}">{{i.category_name}}</a>
+                <a href="{% url 'product' i.pk %}">{{i.category_name}}</a>
             </li>
             {% endfor %}
         </ul>
@@ -59,7 +59,7 @@
     <div class="col-3">
         <div class="card" style="width: 18rem;">
             {% for i in product %}
-            <a href="{% url 'deleteproduct' i.id %}">Delete product</a>
+            <a href="{% url 'deleteproduct' i.pk %}">Delete product</a>
             <div class="card-body">
                 <h5 class="card-title">{{i.product_name}}</h5>
                 <p class="card-text">{{i.quantity_per_unit}}</p>
@@ -68,7 +68,7 @@
                 <p class="card-text">{{i.units_on_order}}</p>
                 <p class="card-text">{{i.reorder_level}}</p>
                 <p class="card-text">{{i.discontinued}}</p>
-                <a href="{% url 'updateproduct' i.id  %}">Update product</a>
+                <a href="{% url 'updateproduct' i.pk  %}">Update product</a>
                 {%endfor%}
             </div>
         </div>
@@ -78,7 +78,7 @@
         <div class="card" style="width: 18rem;">
             {% for i in employee %}
             {% if i.photo %}
-            <a href="{% url 'deleteemployee' i.id %}">Delete employee</a>
+            <a href="{% url 'deleteemployee' i.pk %}">Delete employee</a>
             <img src="{{ i.photo.url }}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{i.title}}</h5>
@@ -97,7 +97,7 @@
                 <p class="card-text">{{i.notes}}</p>
                 <p class="card-text">{{i.reports_to}}</p>
                 <p class="card-text">{{i.phone_path}}</p>
-                <a href="{% url 'updateemployee' i.id  %}">Update employee</a>
+                <a href="{% url 'updateemployee' i.pk  %}">Update employee</a>
                 {%endif%}
                 {%endfor%}
             </div>
@@ -107,13 +107,13 @@
     <div class="col-3">
         <div class="card" style="width: 18rem;">
             {% for i in orderdetail %}
-            <a href="{% url 'deleteorderdetail' i.id %}">Delete order detail</a>
+            <a href="{% url 'deleteorderdetail' i.pk %}">Delete order detail</a>
             <div class="card-body">
                 <h5 class="card-title">{{i.unit_price}}</h5>
                 <p class="card-text">{{i.quantity}}</p>
                 <p class="card-text">{{i.discount}}</p>
-                <a href="{% url 'updateorderdetail' i.id  %}">Update order detail</a>
-                <a href="{% url 'deleteorder' i.id  %}">Delete order </a>
+                <a href="{% url 'updateorderdetail' i.pk  %}">Update order detail</a>
+                <a href="{% url 'deleteorder' i.pk  %}">Delete order </a>
                 <p>{{ i.order_id.order_date }}</p>
                 <p>{{ i.order_id.required_date }}</p>
                 <p>{{ i.order_id.shipped_date }}</p>
@@ -125,7 +125,7 @@
                 <p>{{ i.order_id.ship_region }}</p>
                 <p>{{ i.order_id.ship_postal_code }}</p>
                 <p>{{ i.order_id.ship_country }}</p>
-                <a href="{% url 'updateorder' i.id  %}">Update order </a>
+                <a href="{% url 'updateorder' i.pk  %}">Update order </a>
                 {%endfor%}
             </div>
         </div>

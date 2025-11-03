@@ -34,7 +34,7 @@
     </div>
 </nav>
 
-<form action="{% url 'updateorderdetail' orderdetail.id  %}" method="post" enctype="multipart/form-data">
+<form action="{% url 'updateorderdetail' orderdetail.pk  %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="btn btn-primary btn-block">Update Order Detail</button>
